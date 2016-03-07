@@ -14,6 +14,8 @@ namespace MemoryGame
       
       
       
-      public Card()
+      
+      
+      public Card(string CardBack)
     }
   }
