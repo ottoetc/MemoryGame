@@ -10,15 +10,14 @@ namespace MemoryGame
       private string _theme;
       private int _difficulty;
       public static int count = 0;
-      
-      
+
       public Game(int Difficulty, string Theme, int Id = 0)
       {
         _id = Id;
         _theme = Theme;
         _difficulty = Difficulty;
       }
-      
+
       public bool Check(Card card1, Card card2)
       {
         bool result = false;
@@ -29,7 +28,7 @@ namespace MemoryGame
         }
         return result;
       }
-      
+
       public List<Card> CreateGame()
       {
         Random rnd = new Random();
@@ -47,26 +46,14 @@ namespace MemoryGame
         }
         return game;
       }
-      
+
       public int CheckCount()
       {
         if(count == _difficulty)
         {
-          
+
         }
         return count;
       }
-
-      
-     //cardfront
-      <img src = "/img/@model.GetTheme()@model.GetPairNum().jpg"
-                  /img/harrypotter12.jpg
-                  
-    //cardback
-      <img src= "/img/CardBack@Model.GetTheme().jpg"
-                /img/CardBack2.jpg
-                /img/CardBackHarryPotter.jpg
-                
     }
   }
-
