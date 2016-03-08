@@ -1,25 +1,62 @@
-Using System;
-Using System.Collections.Generic;
+using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
 
 namespace MemoryGame
   {
     public class Game
     {
       private int _id;
-      private string _Theme
+      private string _theme;
+      private int _difficulty;
+      public static count = 0;
       
       
-      
-      public Game(int Difficulty, string Theme)
-      
-      
-      for(i = 0; difficulty.Length; i++)
+      public Game(int Difficulty, string Theme, int Id = 0)
       {
-       int randOrder = random generated # 1-1000000
-        int randOrder2 = random generated # 1-1000000
-      card newcard(i) = new Card(int Theme, pairNum i, randOrder)
-      Card new2card(i) = new Card(int Theme, pairNum i, randOrder2)
+        _id = Id;
+        _theme = Theme;
+        _difficulty = Difficulty;
       }
+      
+      public bool Check(Card card1, Card card2)
+      {
+        bool result = false;
+        if(card1.GetPairNum() === card2.GetPairNum())
+        {
+          count++;
+          result = true;
+        }
+        return result;
+      }
+      
+      public List<Card> CreateGame()
+      {
+        List<Card> game = new List<Card>{};
+        for(int i = 1; i <= _difficulty.Length; i++)
+        {
+          Random rnd = new Random();
+          int randNum = rnd.Next(1,101);
+          int randNum2 = rnd.Next(1,101);
+          Card newCard = new Card(_theme, i, randNum);
+          newCard.Save();
+          Card new2Card = new Card(_theme, i, randNum2);
+          new2Card.Save();
+          game.Add(newCard);
+          game.Add(new2Card);
+        }
+        return game;
+      }
+      
+      public int CheckCount()
+      {
+        if(count === _difficulty)
+        {
+          
+        }
+        return count;
+      }
+
       
      //cardfront
       <img src = "/img/@model.GetTheme()@model.GetPairNum().jpg"

@@ -1,22 +1,22 @@
-Using System;
-Using System.Collections.Generic;
+using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
 
 namespace MemoryGame
   {
     public class Card
     {
       private int _id;
-      private string _theme
+      private string _theme;
       private int _pairNum;
       private int _randNum;
-      
       
       public Card(string Theme, int PairNum, int RandNum, int Id = 0)
       {
         _theme = Theme;
         _id = Id;
         _pairNum = PairNum;
-        _randNum = RandNum
+        _randNum = RandNum;
       }
       
       public override bool Equals(System.Object otherCard)
