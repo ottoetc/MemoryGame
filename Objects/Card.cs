@@ -88,15 +88,9 @@ namespace MemoryGame
         cmd.Parameters.Add(themeParameter);
         cmd.Parameters.Add(pairNumParameter);
         cmd.Parameters.Add(randNumParameter);
-<<<<<<< HEAD
         
         rdr = cmd.ExecuteReader();
         
-=======
-
-        rdr = cmd.ExecuteReader();
-
->>>>>>> 45b1a038d4bb17ed0a0db438dcf4e367dd356a39
         while(rdr.Read())
         {
           this._id = rdr.GetInt32(0);
