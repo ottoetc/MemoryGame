@@ -9,7 +9,7 @@ namespace MemoryGame
       private int _id;
       private string _theme;
       private int _difficulty;
-      public static count = 0;
+      public static int count = 0;
       
       
       public Game(int Difficulty, string Theme, int Id = 0)
@@ -22,7 +22,7 @@ namespace MemoryGame
       public bool Check(Card card1, Card card2)
       {
         bool result = false;
-        if(card1.GetPairNum() === card2.GetPairNum())
+        if(card1.GetPairNum() == card2.GetPairNum())
         {
           count++;
           result = true;
@@ -32,10 +32,10 @@ namespace MemoryGame
       
       public List<Card> CreateGame()
       {
+        Random rnd = new Random();
         List<Card> game = new List<Card>{};
-        for(int i = 1; i <= _difficulty.Length; i++)
+        for(int i = 1; i <= _difficulty; i++)
         {
-          Random rnd = new Random();
           int randNum = rnd.Next(1,101);
           int randNum2 = rnd.Next(1,101);
           Card newCard = new Card(_theme, i, randNum);
@@ -50,7 +50,7 @@ namespace MemoryGame
       
       public int CheckCount()
       {
-        if(count === _difficulty)
+        if(count == _difficulty)
         {
           
         }

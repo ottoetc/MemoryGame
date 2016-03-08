@@ -68,7 +68,7 @@ namespace MemoryGame
       public void Save()
       {
         SqlConnection conn = DB.Connection();
-        SqlDataReader rdr;
+        SqlDataReader rdr = null;
         conn.Open();
         
         SqlCommand cmd = new SqlCommand("INSERT INTO cards (theme, pairnum, randnum) OUTPUT INSERTED.id VALUES(@Theme, @PairNum, @RandNum);", conn);
@@ -88,6 +88,8 @@ namespace MemoryGame
         cmd.Parameters.Add(themeParameter);
         cmd.Parameters.Add(pairNumParameter);
         cmd.Parameters.Add(randNumParameter);
+        
+        rdr = cmd.ExecuteReader();
         
         while(rdr.Read())
         {
