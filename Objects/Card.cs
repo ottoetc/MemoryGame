@@ -10,7 +10,7 @@ namespace MemoryGame
       private string _theme;
       private int _pairNum;
       private int _randNum;
-      
+
       public Card(string Theme, int PairNum, int RandNum, int Id = 0)
       {
         _theme = Theme;
@@ -18,7 +18,7 @@ namespace MemoryGame
         _pairNum = PairNum;
         _randNum = RandNum;
       }
-      
+
       public override bool Equals(System.Object otherCard)
       {
         if(!(otherCard is Card))
@@ -35,7 +35,7 @@ namespace MemoryGame
           return (idEquality && themeEquality && pairNumEquality && randNumEquality);
         }
       }
-      
+
       public int GetId()
       {
         return _id;
@@ -45,7 +45,7 @@ namespace MemoryGame
         return _pairNum;
       }
       public void SetPairNum(int newPairNum)
-      {   
+      {
         _pairNum = newPairNum;
       }
       public int GetRandNum()
@@ -64,31 +64,33 @@ namespace MemoryGame
       {
         _theme = newTheme;
       }
-      
+
       public void Save()
       {
         SqlConnection conn = DB.Connection();
         SqlDataReader rdr;
         conn.Open();
-        
+
         SqlCommand cmd = new SqlCommand("INSERT INTO cards (theme, pairnum, randnum) OUTPUT INSERTED.id VALUES(@Theme, @PairNum, @RandNum);", conn);
-        
+
         SqlParameter themeParameter = new SqlParameter();
         themeParameter.ParameterName = "@Theme";
         themeParameter.Value = this.GetTheme();
-        
+
         SqlParameter pairNumParameter = new SqlParameter();
         pairNumParameter.ParameterName = "@PairNum";
         pairNumParameter.Value = this.GetPairNum();
-        
+
         SqlParameter randNumParameter = new SqlParameter();
         randNumParameter.ParameterName = "@RandNum";
         randNumParameter.Value = this.GetRandNum();
-        
+
         cmd.Parameters.Add(themeParameter);
         cmd.Parameters.Add(pairNumParameter);
         cmd.Parameters.Add(randNumParameter);
-        
+
+        rdr = cmd.ExecuteReader();
+
         while(rdr.Read())
         {
           this._id = rdr.GetInt32(0);
@@ -105,21 +107,21 @@ namespace MemoryGame
       public static List<Card> GetAll()
       {
         List<Card> allCards = new List<Card>{};
-        
+
         SqlConnection conn = DB.Connection();
         SqlDataReader rdr = null;
         conn.Open();
-        
+
         SqlCommand cmd = new SqlCommand("SELECT * FROM cards ORDER BY randnum ASC;", conn);
         rdr = cmd.ExecuteReader();
-        
+
         while(rdr.Read())
         {
           int cardId = rdr.GetInt32(0);
           string cardTheme = rdr.GetString(1);
-          int cardPairNum = GetInt32(2);
-          int cardRandNum = GetInt32(3);
-          
+          int cardPairNum = rdr.GetInt32(2);
+          int cardRandNum = rdr.GetInt32(3);
+
           Card newCard = new Card(cardTheme, cardPairNum, cardRandNum, cardId);
           allCards.Add(newCard);
         }
@@ -138,10 +140,10 @@ namespace MemoryGame
         SqlConnection conn = DB.Connection();
         SqlDataReader rdr = null;
         conn.Open();
-        
+
         SqlCommand cmd = new SqlCommand("DELETE FROM cards; DBCC CHECKIDENT ('cards', RESEED, 0);", conn);
         cmd.ExecuteNonQuery();
       }
-      
+
     }
   }
