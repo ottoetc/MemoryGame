@@ -47,13 +47,14 @@ namespace MemoryGame
         return game;
       }
 
-      public int CheckCount()
+      public bool CheckWin()
       {
+        bool winner = false;
         if(count == _difficulty)
         {
-
+          winner = true;
         }
-        return count;
+        return winner;
       }
     }
   }
