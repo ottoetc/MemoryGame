@@ -23,9 +23,35 @@ namespace MemoryGame
       }
       Assert.Equal(allCards.Count, 24);
     }
+    [Fact]
+    public void Test_CardsMatchTrue()
+    {
+      Card testCard = new Card("harrypotter", 1, 12, 1);
+      Card testCard2 = new Card("harrypotter", 1, 23, 2);
+      Game testGame = new Game(0, "test");
+      bool result = testGame.Check(testCard, testCard2);
+      Console.WriteLine("Card1: ID" + testCard.GetId() + " PairNum: " + testCard.GetPairNum() + " RandNum: " + testCard.GetRandNum());
+      Console.WriteLine("Card2: ID" + testCard2.GetId() + " PairNum: " + testCard2.GetPairNum() + " RandNum: " + testCard2.GetRandNum());
+      Console.WriteLine("Result: " + result);
+      bool test = true;
+      Assert.Equal(result, test);
+    }
+    [Fact]
+    public void Test_CardsMatchFalse()
+    {
+      Card testCard = new Card("harrypotter", 1, 12, 1);
+      Card testCard2 = new Card("harrypotter", 2, 23, 2);
+      Game testGame = new Game(0, "test");
+      bool result = testGame.Check(testCard, testCard2);
+      Console.WriteLine("Card1: ID" + testCard.GetId() + " PairNum: " + testCard.GetPairNum() + " RandNum: " + testCard.GetRandNum());
+      Console.WriteLine("Card2: ID" + testCard2.GetId() + " PairNum: " + testCard2.GetPairNum() + " RandNum: " + testCard2.GetRandNum());
+      Console.WriteLine("Result: " + result);
+      bool test = false;
+      Assert.Equal(result, test);
+    }
     public void Dispose()
     {
-
+      Card.DeleteAll();
     }
   }
 }
