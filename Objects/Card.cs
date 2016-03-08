@@ -144,6 +144,44 @@ namespace MemoryGame
         SqlCommand cmd = new SqlCommand("DELETE FROM cards; DBCC CHECKIDENT ('cards', RESEED, 0);", conn);
         cmd.ExecuteNonQuery();
       }
+      
+      public static Card Find(int id)
+    {
+      SqlConnection conn = DB.Connection();
+      SqlDataReader rdr = null;
+      conn.Open();
 
+      SqlCommand cmd = new SqlCommand("SELECT * FROM cards WHERE id = @CardId;", conn);
+      SqlParameter cardIdParameter = new SqlParameter();
+      cardIdParameter.ParameterName = "@CardId";
+      cardIdParameter.Value = id.ToString();
+      cmd.Parameters.Add(cardIdParameter);
+      rdr = cmd.ExecuteReader();
+
+      int foundCardId = 0;
+      string foundCardTheme = null;
+      int foundCardPairNum = 0;
+      int foundCardRandNum = 0;
+      
+
+      while(rdr.Read())
+      {
+        foundCardId = rdr.GetInt32(0);
+        foundCardTheme = rdr.GetString(1);
+        foundCardPairNum = rdr.GetInt32(2);
+        foundCardRandNum = rdr.GetInt32(3);
+      }
+      Card foundCard = new Card(foundCardTheme, foundCardPairNum, foundCardRandNum, foundCardId);
+
+      if (rdr != null)
+      {
+        rdr.Close();
+      }
+      if (conn != null)
+      {
+        conn.Close();
+      }
+      return foundCard;
     }
   }
+}
