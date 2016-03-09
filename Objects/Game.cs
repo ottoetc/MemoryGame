@@ -18,7 +18,10 @@ namespace MemoryGame
         _theme = Theme;
         _difficulty = Difficulty;
       }
-
+      public int GetCount()
+      {
+        return count;
+      }
       public bool Check(Card card1, Card card2)
       {
         bool result = false;
