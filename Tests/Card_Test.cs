@@ -27,7 +27,7 @@ namespace MemoryGame
     [Fact]
     public void Test_Find()
     {
-      Card testCard = new Card("harrypotter", 1, 10, "false", 1);
+      Card testCard = new Card("harrypotter", 1, 10, "no", 1);
       testCard.Save();
       Card foundCard = Card.Find(1);
       Console.WriteLine("Test Find: TestCard ID: " + testCard.GetId());

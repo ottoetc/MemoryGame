@@ -26,8 +26,8 @@ namespace MemoryGame
     [Fact]
     public void Test_CardsMatchTrue()
     {
-      Card testCard = new Card("harrypotter", 1, 12, "true", 1);
-      Card testCard2 = new Card("harrypotter", 1, 23, "true", 2);
+      Card testCard = new Card("harrypotter", 1, 12, "yes", 1);
+      Card testCard2 = new Card("harrypotter", 1, 23, "yes", 2);
       Game testGame = new Game(0, "test");
       bool result = testGame.Check(testCard, testCard2);
       Console.WriteLine("Card1: ID" + testCard.GetId() + " PairNum: " + testCard.GetPairNum() + " RandNum: " + testCard.GetRandNum());
@@ -39,8 +39,8 @@ namespace MemoryGame
     [Fact]
     public void Test_CardsMatchFalse()
     {
-      Card testCard = new Card("harrypotter", 1, 12, "true", 1);
-      Card testCard2 = new Card("harrypotter", 2, 23, "true", 2);
+      Card testCard = new Card("harrypotter", 1, 12, "yes", 1);
+      Card testCard2 = new Card("harrypotter", 2, 23, "yes", 2);
       Game testGame = new Game(0, "test");
       bool result = testGame.Check(testCard, testCard2);
       Console.WriteLine("Card1: ID" + testCard.GetId() + " PairNum: " + testCard.GetPairNum() + " RandNum: " + testCard.GetRandNum());
@@ -79,7 +79,7 @@ namespace MemoryGame
       testGame.SetFirstCard(card1);
       Card card2 = Card.Find(2);
       Card firstCard = testGame.GetFirstCard();
-      
+
       Assert.Equal(card1, firstCard);
     }
     public void Dispose()

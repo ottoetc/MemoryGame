@@ -19,7 +19,15 @@ namespace MemoryGame
         _theme = Theme;
         _difficulty = Difficulty;
       }
-      public Card SetFirstCard(Card newCard)
+      public void SetTheme(string newTheme)
+      {
+        _theme = newTheme;
+      }
+      public void SetDifficulty(int newDifficulty)
+      {
+        _difficulty = newDifficulty;
+      }
+      public void SetFirstCard(Card newCard)
       {
         _firstCard = newCard;
       }

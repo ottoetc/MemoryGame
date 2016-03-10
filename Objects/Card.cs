@@ -12,7 +12,7 @@ namespace MemoryGame
       private int _randNum;
       private string _turnt;
 
-      public Card(string Theme, int PairNum, int RandNum, string Turnt = "false", int Id = 0)
+      public Card(string Theme, int PairNum, int RandNum, string Turnt = "no", int Id = 0)
       {
         _theme = Theme;
         _id = Id;
@@ -95,7 +95,7 @@ namespace MemoryGame
         SqlParameter randNumParameter = new SqlParameter();
         randNumParameter.ParameterName = "@RandNum";
         randNumParameter.Value = this.GetRandNum();
-        
+
         SqlParameter turntParameter = new SqlParameter();
         turntParameter.ParameterName = "@Turnt";
         turntParameter.Value = this.GetTurnt();
@@ -104,9 +104,9 @@ namespace MemoryGame
         cmd.Parameters.Add(pairNumParameter);
         cmd.Parameters.Add(randNumParameter);
         cmd.Parameters.Add(turntParameter);
-        
+
         rdr = cmd.ExecuteReader();
-        
+
         while(rdr.Read())
         {
           this._id = rdr.GetInt32(0);
@@ -161,30 +161,30 @@ namespace MemoryGame
         SqlCommand cmd = new SqlCommand("DELETE FROM cards; DBCC CHECKIDENT ('cards', RESEED, 0);", conn);
         cmd.ExecuteNonQuery();
       }
-      
+
       public void Update(string updateTurnt)
       {
         SqlConnection conn = DB.Connection();
         SqlDataReader rdr;
         conn.Open();
-        
+
         SqlCommand cmd = new SqlCommand("UPDATE cards SET turnt = @UpdateTurnt OUTPUT INSERTED.turnt WHERE id = @CardId;", conn);
-        
+
         SqlParameter updateTurntParameter = new SqlParameter();
         updateTurntParameter.ParameterName = "@UpdateTurnt";
         updateTurntParameter.Value = updateTurnt;
         cmd.Parameters.Add(updateTurntParameter);
-        
+
         SqlParameter cardIdParameter = new SqlParameter();
         cardIdParameter.ParameterName = "@CardId";
         cardIdParameter.Value = this.GetId();
         cmd.Parameters.Add(cardIdParameter);
-        
+
         rdr = cmd.ExecuteReader();
-        
+
         while(rdr.Read())
         {
-          this._turnt = GetString(0);
+          this._turnt = rdr.GetString(0);
         }
         if(rdr != null)
         {
@@ -195,7 +195,7 @@ namespace MemoryGame
           conn.Close();
         }
       }
-      
+
       public static Card Find(int id)
     {
       SqlConnection conn = DB.Connection();
@@ -214,7 +214,7 @@ namespace MemoryGame
       int foundCardPairNum = 0;
       int foundCardRandNum = 0;
       string foundCardTurnt = null;
-      
+
 
       while(rdr.Read())
       {
