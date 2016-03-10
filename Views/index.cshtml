@@ -4,13 +4,13 @@
 
   </head>
   <body>
-    <form action="/" method="post">
-      <label>Card 1(ID 1)</label>
-      <input type="checkbox" value="1" name="card1" id="1">
-      <label>Card 2(ID 2)</label>
-      <input type="checkbox" value="2" name="card2" id="2">
-
-      <button type="submit">Check</button>
+    <form action="/game" method="post">
+      <fieldset id="game-difficulty">
+        <input type="radio" name="game-difficulty" value=""><label>Small</label>
+        <input type="radio" name="game-difficulty" value=""><label>Medium</label>
+        <input type="radio" name="game-difficulty" value=""><label>Large</label>
+      </fieldset>
+      <button type="submit">Play</button>
     </form>
 
   @Model

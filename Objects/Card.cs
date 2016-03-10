@@ -10,13 +10,15 @@ namespace MemoryGame
       private string _theme;
       private int _pairNum;
       private int _randNum;
+      private string _turnt;
 
-      public Card(string Theme, int PairNum, int RandNum, int Id = 0)
+      public Card(string Theme, int PairNum, int RandNum, string Turnt = "false", int Id = 0)
       {
         _theme = Theme;
         _id = Id;
         _pairNum = PairNum;
         _randNum = RandNum;
+        _turnt = Turnt;
       }
 
       public override bool Equals(System.Object otherCard)
@@ -32,7 +34,8 @@ namespace MemoryGame
           bool themeEquality = this.GetTheme() == newCard.GetTheme();
           bool pairNumEquality = this.GetPairNum() == newCard.GetPairNum();
           bool randNumEquality = this.GetRandNum() == newCard.GetRandNum();
-          return (idEquality && themeEquality && pairNumEquality && randNumEquality);
+          bool turntEquality = this.GetTurnt() == newCard.GetTurnt();
+          return (idEquality && themeEquality && pairNumEquality && randNumEquality && turntEquality);
         }
       }
 
@@ -64,6 +67,14 @@ namespace MemoryGame
       {
         _theme = newTheme;
       }
+      public string GetTurnt()
+      {
+        return _turnt;
+      }
+      public void SetTurnt(string newTurnt)
+      {
+        _turnt = newTurnt;
+      }
 
       public void Save()
       {
@@ -71,7 +82,7 @@ namespace MemoryGame
         SqlDataReader rdr = null;
         conn.Open();
 
-        SqlCommand cmd = new SqlCommand("INSERT INTO cards (theme, pairnum, randnum) OUTPUT INSERTED.id VALUES(@Theme, @PairNum, @RandNum);", conn);
+        SqlCommand cmd = new SqlCommand("INSERT INTO cards (theme, pairnum, randnum, turnt) OUTPUT INSERTED.id VALUES(@Theme, @PairNum, @RandNum, @Turnt);", conn);
 
         SqlParameter themeParameter = new SqlParameter();
         themeParameter.ParameterName = "@Theme";
@@ -84,10 +95,15 @@ namespace MemoryGame
         SqlParameter randNumParameter = new SqlParameter();
         randNumParameter.ParameterName = "@RandNum";
         randNumParameter.Value = this.GetRandNum();
+        
+        SqlParameter turntParameter = new SqlParameter();
+        turntParameter.ParameterName = "@Turnt";
+        turntParameter.Value = this.GetTurnt();
 
         cmd.Parameters.Add(themeParameter);
         cmd.Parameters.Add(pairNumParameter);
         cmd.Parameters.Add(randNumParameter);
+        cmd.Parameters.Add(turntParameter);
         
         rdr = cmd.ExecuteReader();
         
@@ -121,8 +137,9 @@ namespace MemoryGame
           string cardTheme = rdr.GetString(1);
           int cardPairNum = rdr.GetInt32(2);
           int cardRandNum = rdr.GetInt32(3);
+          string cardTurnt = rdr.GetString(4);
 
-          Card newCard = new Card(cardTheme, cardPairNum, cardRandNum, cardId);
+          Card newCard = new Card(cardTheme, cardPairNum, cardRandNum, cardTurnt, cardId);
           allCards.Add(newCard);
         }
         if(rdr != null)
@@ -145,6 +162,40 @@ namespace MemoryGame
         cmd.ExecuteNonQuery();
       }
       
+      public void Update(string updateTurnt)
+      {
+        SqlConnection conn = DB.Connection();
+        SqlDataReader rdr;
+        conn.Open();
+        
+        SqlCommand cmd = new SqlCommand("UPDATE cards SET turnt = @UpdateTurnt OUTPUT INSERTED.turnt WHERE id = @CardId;", conn);
+        
+        SqlParameter updateTurntParameter = new SqlParameter();
+        updateTurntParameter.ParameterName = "@UpdateTurnt";
+        updateTurntParameter.Value = updateTurnt;
+        cmd.Parameters.Add(updateTurntParameter);
+        
+        SqlParameter cardIdParameter = new SqlParameter();
+        cardIdParameter.ParameterName = "@CardId";
+        cardIdParameter.Value = this.GetId();
+        cmd.Parameters.Add(cardIdParameter);
+        
+        rdr = cmd.ExecuteReader();
+        
+        while(rdr.Read())
+        {
+          this._turnt = GetString(0);
+        }
+        if(rdr != null)
+        {
+          rdr.Close();
+        }
+        if(conn != null)
+        {
+          conn.Close();
+        }
+      }
+      
       public static Card Find(int id)
     {
       SqlConnection conn = DB.Connection();
@@ -162,6 +213,7 @@ namespace MemoryGame
       string foundCardTheme = null;
       int foundCardPairNum = 0;
       int foundCardRandNum = 0;
+      string foundCardTurnt = null;
       
 
       while(rdr.Read())
@@ -170,8 +222,9 @@ namespace MemoryGame
         foundCardTheme = rdr.GetString(1);
         foundCardPairNum = rdr.GetInt32(2);
         foundCardRandNum = rdr.GetInt32(3);
+        foundCardTurnt = rdr.GetString(4);
       }
-      Card foundCard = new Card(foundCardTheme, foundCardPairNum, foundCardRandNum, foundCardId);
+      Card foundCard = new Card(foundCardTheme, foundCardPairNum, foundCardRandNum, foundCardTurnt, foundCardId);
 
       if (rdr != null)
       {

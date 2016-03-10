@@ -15,68 +15,93 @@ namespace MemoryGame
       };
       Post["/game"] = _ = >
       {
-        Game newGame = new Game(12, "harrypotter");
-        return View[""]
+        Game newGame = new Game(Form.Request["game-difficulty"], Form.Request["game-theme"]);
+        List<Card> gameCards = newGame.CreateGame();
+        List<Card> allCards = Card.GetAll();
+        
+        Dictionary<string, object> gameBoard = new Dictionary<string, object>();
+        gameBoard.Add("allCards", allCards);
+        
+        return View["game.cshtml", gameBoard];
       };
       
-      Get[] = _ =>
+      Get["/firstpick"] = _ =>
       {
-
+        Dictionary<string, object> updatedBoard = new Dictionary<string, object>();
         
+        List<Card> allCards = Card.GetAll();
+        
+        bool checkResult = testGame.Check(card1, card2);
+        
+        updatedBoard.Add("allCards", allCards);
+        updatedBoard.Add("checkResult", checkResult);
+        
+        return View["game.cshtml", updatedBoard];
       };
       Post["/firstpick"] = _ =>
       {
-   
-        List<Card> gameCards = newGame.CreateGame();
-        List<Card> randomCards = Card.GetAll();
-        Card clickedCard1 = Card.Find(Request.Form["clicked-card"]);
-        // bool result = Game.Check(newCard, newCard2);
-        clickedCard1.SetFirstCard();
+        Dictionary<string, object> updatedBoard = new Dictionary<string, object>();
         
-        List<Card> updatedBoard = Card.GetAll();
+        
+        Card clickedCard1 = Card.Find(Request.Form["clicked-card"]);
+        
+        clickedCard1.Update("true");
+        
+        testGame.SetFirstCard(clickedCard1);
+
+        List<Card> allCards = Card.GetAll();
+        
+        updatedBoard.Add("allCards", allCards);
+        
         return View["game.cshtml", updatedBoard];
       };
       
-      Get[] = _ =>
+      Get["/secondpick"] = _ =>
       {
+        Dictionary<string, object> updatedBoard = new Dictionary<string, object>();
+        
+        List<Card> allCards = Card.GetAll();
 
-        Game newGame = new Game(2, "harrypotter", 1);
-
-        Card testCard = new Card("harrypotter", 1, 15, 0);
-        testCard.Save();
-        Card testCard2 = new Card("harrypotter", 5, 35, 1);
-        testCard2.Save();
-
-        Card newCard = Card.Find(Request.Form["card1"]);
-        Console.WriteLine(newCard.GetPairNum());
-
-        int numb = Request.Form["card2"];
-
-              Console.WriteLine(numb);
-        Card newCard2 = Card.Find(numb);
-
-        Console.WriteLine(newCard2.GetPairNum());
-
-        bool result = newGame.Check(newCard, newCard2);
-        return View["index.cshtml", result];
+        Card card1 = newGame.GetFirstCard();
+        
+        updatedBoard.Add("allCards", allCards);
+        
+        return View["index.cshtml", updatedBoard];
       };
       Post["/secondpick"] = _ =>
       {
-        Card clickedCard2 = Card.Find(Request.Form["clicked-card2"]);
-        Card clickedCard1 = Card.GetFirstCard();
-        bool result = Game.Check(clickedCard1, clickedCard2);
+        Dictionary<string, object> updatedBoard = new Dictionary<string, object>();
+        
+        List<Card> allCards = Card.GetAll();
+
+        Card card1 = newGame.GetFirstCard();
+        Card card2 = Card.Find(Request.Form["clicked-card"]);
+        card2.Update("true");
+        
+        bool result = newGame.Check(Card1, Card2);
+        if(result != true)
+        {
+          card1.Update("false");
+          card2.Update("false");
+        }
         if(result == true)
         {
-        bool winner = Game.CheckWin();
+          bool winner = Game.CheckWin();
         }
         if(winner == true)
         {
           return View["winner.cshtml"];
         }
-        List<Card> updatedBoard = Card.GetAll();
-        Dictionary<string, object> model = new Dictionary<string, object>();
-        model.Add("")
-      }
+        else
+        {
+          List<Card> allCards = Card.GetAll();
+          
+          updatedBoard.Add("allCards", allCards);
+          updatedBoard.Add("result", result);
+          
+          return View["game.cshtml", updatedBoard];
+        }
+      };
     }
   }
 }
