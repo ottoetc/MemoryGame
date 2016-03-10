@@ -49,6 +49,27 @@ namespace MemoryGame
       bool test = false;
       Assert.Equal(result, test);
     }
+
+    [Fact]
+    public void Test_win()
+    {
+      Game testGame = new Game(2, "harrypotter");
+      testGame.CreateGame();
+
+      Card card1 = Card.Find(1);
+      Card card2 = Card.Find(2);
+      Card card3 = Card.Find(3);
+      Card card4 = Card.Find(4);
+
+      testGame.Check(card1, card2);
+      Console.WriteLine(testGame.GetCount());
+      testGame.Check(card3, card4);
+      Console.WriteLine(testGame.GetCount());
+      bool gameWinner = testGame.CheckWin();
+
+      bool testWinner = true;
+      Assert.Equal(testWinner, gameWinner);
+    }
     public void Dispose()
     {
       Card.DeleteAll();

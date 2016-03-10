@@ -24,6 +24,16 @@ namespace MemoryGame
       }
       Assert.Equal(allCards.Count, gameCards.Count);
     }
+    [Fact]
+    public void Test_Find()
+    {
+      Card testCard = new Card("harrypotter", 1, 10, 1);
+      testCard.Save();
+      Card foundCard = Card.Find(1);
+      Console.WriteLine("Test Find: TestCard ID: " + testCard.GetId());
+      Console.WriteLine("Test Find: FoundCard ID: " + foundCard.GetId());
+      Assert.Equal(testCard, foundCard);
+    }
     public void Dispose()
     {
       Card.DeleteAll();

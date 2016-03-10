@@ -1,0 +1,124 @@
+@import 'layout/_mixins';
+
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-bottom: 70px;
+    padding-top: 60px;
+
+}
+
+.card {
+    @extend %card-set;
+}
+
+
+input#herm {
+    margin-top: 20px;
+    width: 213px;
+    height: 305px;
+    padding: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    -webkit-appearance: none;
+    outline: 0;
+}
+input#herm:checked {
+    background-image: url("../img/herm.jpg");
+}
+input#herm:not(:checked) {
+    background-image: url("../img/hlogo.jpg");
+}
+
+input#ron {
+    margin-top: 20px;
+    width: 213px;
+    height: 305px;
+    padding: 0;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    -webkit-appearance: none;
+    outline: 0;
+}
+input#ron:checked {
+    background-image: url("../img/ron.jpg");
+}
+input#ron:not(:checked) {
+    background-image: url("../img/hlogo.jpg");
+}
+
+input#dobby {
+    margin-top: 20px;
+    width: 213px;
+    height: 304px;
+    padding: 0;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    -webkit-appearance: none;
+    outline: 0;
+}
+input#dobby:checked {
+    background-image: url("../img/dobby.jpg");
+}
+input#dobby:not(:checked) {
+    background-image: url("../img/hlogo.jpg");
+}
+
+input#malfoy {
+    margin-top: 20px;
+    width: 213px;
+    height: 304px;
+    padding: 0;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    -webkit-appearance: none;
+    outline: 0;
+}
+input#malfoy:checked {
+    background-image: url("../img/malfoy.jpg");
+}
+input#malfoy:not(:checked) {
+    background-image: url("../img/hlogo.jpg");
+}
+
+input#nev {
+    margin-top: 20px;
+    width: 213px;
+    height: 304px;
+    padding: 0;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    -webkit-appearance: none;
+    outline: 0;
+}
+input#nev:checked {
+    background-image: url("../img/nev.jpg");
+}
+input#nev:not(:checked) {
+    background-image: url("../img/hlogo.jpg");
+}
+
+input#luna {
+    margin-top: 20px;
+    width: 213px;
+    height: 304px;
+    padding: 0;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    -webkit-appearance: none;
+    outline: 0;
+}
+input#luna:checked {
+    background-image: url("../img/luna.jpg");
+}
+input#luna:not(:checked) {
+    background-image: url("../img/hlogo.jpg");
+}

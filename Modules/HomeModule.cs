@@ -21,6 +21,7 @@ namespace MemoryGame
       
       Get[] = _ =>
       {
+
         
       };
       Post["/firstpick"] = _ =>
@@ -38,7 +39,26 @@ namespace MemoryGame
       
       Get[] = _ =>
       {
-        
+
+        Game newGame = new Game(2, "harrypotter", 1);
+
+        Card testCard = new Card("harrypotter", 1, 15, 0);
+        testCard.Save();
+        Card testCard2 = new Card("harrypotter", 5, 35, 1);
+        testCard2.Save();
+
+        Card newCard = Card.Find(Request.Form["card1"]);
+        Console.WriteLine(newCard.GetPairNum());
+
+        int numb = Request.Form["card2"];
+
+              Console.WriteLine(numb);
+        Card newCard2 = Card.Find(numb);
+
+        Console.WriteLine(newCard2.GetPairNum());
+
+        bool result = newGame.Check(newCard, newCard2);
+        return View["index.cshtml", result];
       };
       Post["/secondpick"] = _ =>
       {

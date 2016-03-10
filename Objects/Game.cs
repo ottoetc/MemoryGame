@@ -11,13 +11,17 @@ namespace MemoryGame
       private int _difficulty;
       public static int count = 0;
 
+
       public Game(int Difficulty, string Theme, int Id = 0)
       {
         _id = Id;
         _theme = Theme;
         _difficulty = Difficulty;
       }
-
+      public int GetCount()
+      {
+        return count;
+      }
       public bool Check(Card card1, Card card2)
       {
         bool result = false;

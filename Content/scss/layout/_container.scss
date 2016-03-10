@@ -1,0 +1,38 @@
+body {
+  font-family: 'Lato', sans-serif;
+  // background-image: url(http://p1.pichost.me/i/11/1344899.jpg);
+  background-image: url(../img/background.jpg);
+
+}
+
+.title h1 {
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  font-size: 70px;
+  color: white;
+  text-align: center;
+  margin-bottom: 0;
+}
+.title h3 {
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  font-size: 25px;
+  color: white;
+  text-align: center;
+}
+
+h1 span {
+  font-family: 'Dawning of a New Day', cursive;
+  font-size: 100px;
+}
+
+.title {
+  width: 1000px;
+  padding-top: 20px;
+  margin: 0 auto;
+}
+
+h3 span {
+  font-family: 'Dawning of a New Day', cursive;
+  font-size: 40px;
+}

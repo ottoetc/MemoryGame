@@ -1,0 +1,393 @@
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+.c1 {
+  animation-name: color1;
+  animation-duration: 2s;
+  animation-iteration-count: infinite; }
+
+.c2 {
+  animation-name: color2;
+  animation-duration: 2s;
+  animation-iteration-count: infinite; }
+
+.c3 {
+  animation-name: color3;
+  animation-duration: 2s;
+  animation-iteration-count: infinite; }
+
+@keyframes color1 {
+  20% {
+    color: pink; }
+  50% {
+    color: white; }
+  100% {
+    color: white; } }
+@keyframes color2 {
+  0% {
+    color: white; }
+  50% {
+    color: pink; }
+  100% {
+    color: white; } }
+@keyframes color3 {
+  0% {
+    color: white; }
+  50% {
+    color: white; }
+  100% {
+    color: pink; } }
+a {
+  list-style: none;
+  text-decoration: none;
+  color: white; }
+
+ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+  margin: 0 auto;
+  padding: 20px 0 0; }
+
+nav {
+  width: 80%;
+  margin: auto; }
+
+li {
+  flex: 1;
+  padding: 5px 0;
+  font-size: 18px;
+  text-align: center;
+  list-style: none;
+  text-decoration: none; }
+
+a span {
+  font-family: 'Dawning of a New Day', cursive; }
+
+li:nth-child(1) {
+  display: flex;
+  flex: 6; }
+
+nav ul li a,
+nav ul li a:after,
+nav ul li a:before {
+  transition: all .5s; }
+
+nav ul li a:hover {
+  color: #555; }
+
+/* SHIFT */
+nav ul li a {
+  position: relative;
+  z-index: 1; }
+
+nav ul li a:hover {
+  color: lightpink;
+  opacity: .5; }
+
+.logo1 {
+  font-size: 35px;
+  font-family: 'Lato', sans-serif;
+  font-weight: bold; }
+
+.border1 {
+  border-left: 1px solid white; }
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-image: url(../img/bg3.jpg);
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-bottom: 70px;
+  padding-top: 60px; }
+
+input#herm {
+  margin-top: 20px;
+  width: 213px;
+  height: 305px;
+  padding: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  -webkit-appearance: none;
+  outline: 0; }
+
+input#herm:checked {
+  background-image: url("../img/herm.jpg"); }
+
+input#herm:not(:checked) {
+  background-image: url("../img/hlogo.jpg"); }
+
+input#ron {
+  margin-top: 20px;
+  width: 213px;
+  height: 305px;
+  padding: 0;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  -webkit-appearance: none;
+  outline: 0; }
+
+input#ron:checked {
+  background-image: url("../img/ron.jpg"); }
+
+input#ron:not(:checked) {
+  background-image: url("../img/hlogo.jpg"); }
+
+input#dobby {
+  margin-top: 20px;
+  width: 213px;
+  height: 304px;
+  padding: 0;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  -webkit-appearance: none;
+  outline: 0; }
+
+input#dobby:checked {
+  background-image: url("../img/dobby.jpg"); }
+
+input#dobby:not(:checked) {
+  background-image: url("../img/hlogo.jpg"); }
+
+input#malfoy {
+  margin-top: 20px;
+  width: 213px;
+  height: 304px;
+  padding: 0;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  -webkit-appearance: none;
+  outline: 0; }
+
+input#malfoy:checked {
+  background-image: url("../img/malfoy.jpg"); }
+
+input#malfoy:not(:checked) {
+  background-image: url("../img/hlogo.jpg"); }
+
+input#nev {
+  margin-top: 20px;
+  width: 213px;
+  height: 304px;
+  padding: 0;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  -webkit-appearance: none;
+  outline: 0; }
+
+input#nev:checked {
+  background-image: url("../img/nev.jpg"); }
+
+input#nev:not(:checked) {
+  background-image: url("../img/hlogo.jpg"); }
+
+input#luna {
+  margin-top: 20px;
+  width: 213px;
+  height: 304px;
+  padding: 0;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  -webkit-appearance: none;
+  outline: 0; }
+
+input#luna:checked {
+  background-image: url("../img/luna.jpg"); }
+
+input#luna:not(:checked) {
+  background-image: url("../img/hlogo.jpg"); }
+
+.flip {
+  -webkit-perspective: 800;
+  width: 400px;
+  height: 200px;
+  position: relative;
+  margin: 50px auto; }
+
+.flip .card.flipped {
+  -webkit-transform: rotatex(-180deg); }
+
+.flip .card {
+  width: 100%;
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transition: 0.5s; }
+
+.flip .card .face {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  z-index: 2;
+  font-family: Georgia;
+  font-size: 3em;
+  text-align: center;
+  line-height: 200px; }
+
+.flip .card .front {
+  position: absolute;
+  z-index: 1;
+  background: black;
+  color: white;
+  cursor: pointer; }
+
+.flip .card .back {
+  -webkit-transform: rotatex(-180deg);
+  background: blue;
+  background: white;
+  color: black;
+  cursor: pointer; }
+
+.modal label {
+  cursor: pointer;
+  margin-bottom: 0; }
+.modal .landingModal2 h1 {
+  margin: 0; }
+.modal .landingModal2 h1 span {
+  font-size: 40px; }
+.modal label img {
+  border-radius: 150px;
+  display: block;
+  max-width: 300px; }
+.modal .modal-state {
+  display: none; }
+.modal .modal-trigger {
+  padding: 0.8em 1em;
+  color: white; }
+.modal .modal-fade-screen {
+  -webkit-transition: opacity 0.25s ease;
+  -moz-transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  opacity: 0;
+  padding-top: 0.6em;
+  text-align: left;
+  visibility: hidden;
+  z-index: 99999999999; }
+  @media screen and (min-width: 53.75em) {
+    .modal .modal-fade-screen {
+      padding-top: 10em; } }
+  .modal .modal-fade-screen .modal-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    cursor: pointer; }
+.modal .modal-close {
+  position: absolute;
+  top: 1.5em;
+  right: 1.5em;
+  height: 1.5em;
+  width: 1.5em;
+  background: #fff;
+  background-color: black;
+  cursor: pointer; }
+  .modal .modal-close:after, .modal .modal-close:before {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    bottom: 0;
+    left: 50%;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    height: 1.5em;
+    width: 0.15em;
+    background: #ddd;
+    content: '';
+    display: block;
+    margin: -3px 0 0 -1px; }
+  .modal .modal-close:hover:after, .modal .modal-close:hover:before {
+    background: #c4c4c4; }
+  .modal .modal-close:before {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg); }
+.modal .modal-inner {
+  -webkit-transition: opacity 0.25s ease;
+  -moz-transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease;
+  background: #fff;
+  border-radius: 3px;
+  background-color: black;
+  margin-top: 0;
+  margin: auto;
+  max-height: 95%;
+  overflow: auto;
+  padding: 1.5em;
+  position: relative;
+  width: 95%; }
+  @media screen and (min-width: 40em) {
+    .modal .modal-inner {
+      max-height: 70%;
+      padding: 3em;
+      width: 60%; } }
+  @media screen and (min-width: 53.75em) {
+    .modal .modal-inner {
+      width: 50%; } }
+  .modal .modal-inner h1 {
+    color: white;
+    text-align: left;
+    text-transform: capitalize; }
+  .modal .modal-inner h1 span {
+    font-family: 'Dawning of a New Day', cursive; }
+  .modal .modal-inner p {
+    color: white;
+    line-height: 1.5em; }
+  .modal .modal-inner .modal-intro {
+    margin-bottom: 1em; }
+  .modal .modal-inner .modal-content {
+    color: white; }
+    @media screen and (min-width: 40em) {
+      .modal .modal-inner .modal-content {
+        -webkit-columns: 2 8em;
+        -moz-columns: 2 8em;
+        columns: 2 8em; } }
+  .modal .modal-inner a.cta {
+    color: #fff;
+    display: inline-block;
+    margin-right: 0.5em;
+    margin-top: 1em; }
+    .modal .modal-inner a.cta:last-child {
+      padding: 0 2em; }
+.modal .modal-state:checked + .modal-fade-screen {
+  opacity: 1;
+  visibility: visible; }
+.modal .modal-state:checked + .modal-fade-screen .modal-inner {
+  top: 0.5em; }
+
+.modal-open {
+  overflow: hidden; }
+
+.card {
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 300px;
+  width: 209px;
+  border: 2px solid black; }
+
+/*# sourceMappingURL=easy.css.map */
