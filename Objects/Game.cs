@@ -10,6 +10,7 @@ namespace MemoryGame
       private string _theme;
       private int _difficulty;
       public static int count = 0;
+      private Card _firstCard;
 
 
       public Game(int Difficulty, string Theme, int Id = 0)
@@ -17,6 +18,14 @@ namespace MemoryGame
         _id = Id;
         _theme = Theme;
         _difficulty = Difficulty;
+      }
+      public Card SetFirstCard(Card newCard)
+      {
+        _firstCard = newCard;
+      }
+      public Card GetFirstCard()
+      {
+        return _firstCard;
       }
       public int GetCount()
       {

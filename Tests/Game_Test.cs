@@ -70,6 +70,18 @@ namespace MemoryGame
       bool testWinner = true;
       Assert.Equal(testWinner, gameWinner);
     }
+    [Fact]
+    public void Test_setFirstCard()
+    {
+      Game testGame = new Game(2, "harrypotter");
+      testGame.CreateGame();
+      Card card1 = Card.Find(1);
+      testGame.SetFirstCard(card1);
+      Card card2 = Card.Find(2);
+      Card firstCard = testGame.GetFirstCard();
+      
+      Assert.Equal(card1, firstCard);
+    }
     public void Dispose()
     {
       Card.DeleteAll();
