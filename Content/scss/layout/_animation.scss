@@ -1,0 +1,35 @@
+.c1 {
+  animation-name: color1;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+.c2 {
+  animation-name: color2;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+.c3 {
+  animation-name: color3;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes color1 {
+  20% {color: pink}
+  50% {color: white}
+  100% {color: white}
+}
+
+@keyframes color2 {
+  0% {color: white}
+  50% {color: pink}
+  100% {color: white}
+}
+
+@keyframes color3 {
+  0% {color: white}
+  50% {color: white}
+  100% {color: pink}
+}

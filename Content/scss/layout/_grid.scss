@@ -1,0 +1,46 @@
+@import "base/variables";
+
+.boxes {
+  display: flex;
+  justify-content: space-around;
+  max-width: 1300px;
+  margin: auto;
+  margin-bottom: 50px;
+}
+.box {
+  display: flex;
+  width: 250px;
+  height: 300px;
+  background-color: white;
+  border: solid 3px #cfb4f7;
+}
+
+.box1 {
+  background-image: url(../img/trip.gif);
+}
+.box2 {
+  background-image: url(../img/trip.jpg);
+  background-size: cover;
+
+}
+
+.box3 {
+  background-image: url(../img/tv.gif);
+  background-size: contain;
+  background-color: #cfb4f7;
+  border: solid 3px #01ffff;
+  @media #{$brk-medium} {
+    display: none;
+  }
+}
+
+
+
+.box4 {
+  background-image: url(../img/trip2.jpg);
+  background-size: cover;
+}
+.box5 {
+  background-image: url(../img/dh.jpg);
+  background-size: contain;
+}
