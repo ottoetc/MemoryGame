@@ -123,7 +123,7 @@ body {
   width: 209px;
   border: 2px solid black; }
 
-input#asap, input#chainz, input#drake, input#eminem, input#fetty, input#kanye, input#kendrick, input#nicki, input#ocean, input#q, input#tyler, input#wayne {
+input#rapper1, input#rapper2, input#rapper3, input#rapper4, input#rapper5, input#rapper6, input#rapper7, input#rapper8, input#rapper9, input#rapper10, input#rapper11, input#rapper12 {
   margin-top: 20px;
   width: 150px;
   height: 250px;
@@ -177,76 +177,76 @@ h2 {
     h2 {
       font-size: 18px; } }
 
-input#asap:checked {
+input#rapper1:checked {
   background-image: url("../img/asap.jpg"); }
 
-input#asap:not(:checked) {
+input#rapper1:not(:checked) {
   background-image: url("../img/logo.jpg"); }
 
-input#chainz:checked {
+input#rapper2:checked {
   background-image: url("../img/chainz.jpg"); }
 
-input#chainz:not(:checked) {
+input#rapper2:not(:checked) {
   background-image: url("../img/logo.jpg"); }
 
-input#drake:checked {
+input#rapper3:checked {
   background-image: url("../img/drake.png"); }
 
-input#drake:not(:checked) {
+input#rapper3:not(:checked) {
   background-image: url("../img/logo.jpg"); }
 
-input#eminem:checked {
+input#rapper4:checked {
   background-image: url("../img/eminem.jpg"); }
 
-input#eminem:not(:checked) {
+input#rapper4:not(:checked) {
   background-image: url("../img/logo.jpg"); }
 
-input#fetty:checked {
+input#rapper5:checked {
   background-image: url("../img/fetty.jpg"); }
 
-input#fetty:not(:checked) {
+input#rapper5:not(:checked) {
   background-image: url("../img/logo.jpg"); }
 
-input#kanye:checked {
+input#rapper6:checked {
   background-image: url("../img/kanye.jpg"); }
 
-input#kanye:not(:checked) {
+input#rapper6:not(:checked) {
   background-image: url("../img/logo.jpg"); }
 
-input#kendrick:checked {
+input#rapper7:checked {
   background-image: url("../img/kendrick.jpg"); }
 
-input#kendrick:not(:checked) {
+input#rapper7:not(:checked) {
   background-image: url("../img/logo.jpg"); }
 
-input#nicki:checked {
+input#rapper8:checked {
   background-image: url("../img/nicki.jpg"); }
 
-input#nicki:not(:checked) {
+input#rapper8:not(:checked) {
   background-image: url("../img/logo.jpg"); }
 
-input#ocean:checked {
+input#rapper9:checked {
   background-image: url("../img/ocean.jpg"); }
 
-input#ocean:not(:checked) {
+input#rapper9:not(:checked) {
   background-image: url("../img/logo.jpg"); }
 
-input#q:checked {
+input#rapper10:checked {
   background-image: url("../img/q.jpg"); }
 
-input#q:not(:checked) {
+input#rapper10:not(:checked) {
   background-image: url("../img/logo.jpg"); }
 
-input#tyler:checked {
+input#rapper11:checked {
   background-image: url("../img/tyler.jpg"); }
 
-input#tyler:not(:checked) {
+input#rapper11:not(:checked) {
   background-image: url("../img/logo.jpg"); }
 
-input#wayne:checked {
+input#rapper12:checked {
   background-image: url("../img/wayne.jpg"); }
 
-input#wayne:not(:checked) {
+input#rapper12:not(:checked) {
   background-image: url("../img/logo.jpg"); }
 
 .modal label {

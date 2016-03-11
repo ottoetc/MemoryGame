@@ -159,7 +159,7 @@ h2 {
     h2 {
       font-size: 18px; } }
 
-input#herm {
+input#harrypotter1 {
   margin-top: 20px;
   width: 213px;
   height: 305px;
@@ -170,13 +170,13 @@ input#herm {
   -webkit-appearance: none;
   outline: 0; }
 
-input#herm:checked {
+input#harrypotter1:checked {
   background-image: url("../img/herm.jpg"); }
 
-input#herm:not(:checked) {
+input#harrypotter1:not(:checked) {
   background-image: url("../img/hlogo.jpg"); }
 
-input#ron {
+input#harrypotter2 {
   margin-top: 20px;
   width: 213px;
   height: 305px;
@@ -187,13 +187,13 @@ input#ron {
   -webkit-appearance: none;
   outline: 0; }
 
-input#ron:checked {
+input#harrypotter2:checked {
   background-image: url("../img/ron.jpg"); }
 
-input#ron:not(:checked) {
+input#harrypotter2:not(:checked) {
   background-image: url("../img/hlogo.jpg"); }
 
-input#dobby {
+input#harrypotter3 {
   margin-top: 20px;
   width: 213px;
   height: 304px;
@@ -204,13 +204,13 @@ input#dobby {
   -webkit-appearance: none;
   outline: 0; }
 
-input#dobby:checked {
+input#harrypotter3:checked {
   background-image: url("../img/dobby.jpg"); }
 
-input#dobby:not(:checked) {
+input#harrypotter3:not(:checked) {
   background-image: url("../img/hlogo.jpg"); }
 
-input#malfoy {
+input#harrypotter4 {
   margin-top: 20px;
   width: 213px;
   height: 304px;
@@ -221,13 +221,13 @@ input#malfoy {
   -webkit-appearance: none;
   outline: 0; }
 
-input#malfoy:checked {
+input#harrypotter4:checked {
   background-image: url("../img/malfoy.jpg"); }
 
-input#malfoy:not(:checked) {
+input#harrypotter4:not(:checked) {
   background-image: url("../img/hlogo.jpg"); }
 
-input#nev {
+input#harrypotter5 {
   margin-top: 20px;
   width: 213px;
   height: 304px;
@@ -238,13 +238,13 @@ input#nev {
   -webkit-appearance: none;
   outline: 0; }
 
-input#nev:checked {
+input#harrypotter5:checked {
   background-image: url("../img/nev.jpg"); }
 
-input#nev:not(:checked) {
+input#harrypotter5:not(:checked) {
   background-image: url("../img/hlogo.jpg"); }
 
-input#luna {
+input#harrypotter6 {
   margin-top: 20px;
   width: 213px;
   height: 304px;
@@ -255,10 +255,10 @@ input#luna {
   -webkit-appearance: none;
   outline: 0; }
 
-input#luna:checked {
+input#harrypotter6:checked {
   background-image: url("../img/luna.jpg"); }
 
-input#luna:not(:checked) {
+input#harrypotter6:not(:checked) {
   background-image: url("../img/hlogo.jpg"); }
 
 .modal label {

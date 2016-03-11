@@ -168,100 +168,100 @@ h1 {
   text-align: center;
   font-weight: lighter; }
 
-input#bojack:checked {
+input#cartoon1:checked {
   background-image: url("../img/bojack.jpg"); }
 
-input#bojack:not(:checked) {
+input#cartoon1:not(:checked) {
   background-image: url("../img/cartoonnw.jpg"); }
 
-input#dexter:checked {
+input#cartoon2:checked {
   background-image: url("../img/dexter.jpg"); }
 
-input#dexter:not(:checked) {
+input#cartoon2:not(:checked) {
   background-image: url("../img/cartoonnw.jpg"); }
 
-input#eliza:checked {
+input#cartoon3:checked {
   background-image: url("../img/eliza.jpg"); }
 
-input#eliza:not(:checked) {
+input#cartoon3:not(:checked) {
   background-image: url("../img/cartoonnw.jpg"); }
 
-input#fries:checked {
+input#cartoon4:checked {
   background-image: url("../img/fries.jpg"); }
 
-input#fries:not(:checked) {
+input#cartoon4:not(:checked) {
   background-image: url("../img/cartoonnw.jpg"); }
 
-input#goku:checked {
+input#cartoon5:checked {
   background-image: url("../img/goku.jpg"); }
 
-input#goku:not(:checked) {
+input#cartoon5:not(:checked) {
   background-image: url("../img/cartoonnw.jpg"); }
 
-input#heart:checked {
+input#cartoon6:checked {
   background-image: url("../img/heart.jpg"); }
 
-input#heart:not(:checked) {
+input#cartoon6:not(:checked) {
   background-image: url("../img/cartoonnw.jpg"); }
 
-input#lsp:checked {
+input#cartoon7:checked {
   background-image: url("../img/lsp.jpg"); }
 
-input#lsp:not(:checked) {
+input#cartoon7:not(:checked) {
   background-image: url("../img/cartoonnw.jpg"); }
 
-input#magic:checked {
+input#cartoon8:checked {
   background-image: url("../img/magic.jpg"); }
 
-input#magic:not(:checked) {
+input#cartoon8:not(:checked) {
   background-image: url("../img/cartoonnw.jpg"); }
 
-input#meatball:checked {
+input#cartoon9:checked {
   background-image: url("../img/meatball.jpg"); }
 
-input#meatball:not(:checked) {
+input#cartoon9:not(:checked) {
   background-image: url("../img/cartoonnw.jpg"); }
 
-input#otto:checked {
+input#cartoon10:checked {
   background-image: url("../img/otto.jpg"); }
 
-input#otto:not(:checked) {
+input#cartoon10:not(:checked) {
   background-image: url("../img/cartoonnw.jpg"); }
 
-input#pinky:checked {
+input#cartoon11:checked {
   background-image: url("../img/pinky.jpg"); }
 
-input#pinky:not(:checked) {
+input#cartoon11:not(:checked) {
   background-image: url("../img/cartoonnw.jpg"); }
 
-input#rick:checked {
+input#cartoon12:checked {
   background-image: url("../img/rick.jpg"); }
 
-input#rick:not(:checked) {
+input#cartoon12:not(:checked) {
   background-image: url("../img/cartoonnw.jpg"); }
 
-input#shake:checked {
+input#cartoon13:checked {
   background-image: url("../img/shake.jpg"); }
 
-input#shake:not(:checked) {
+input#cartoon13:not(:checked) {
   background-image: url("../img/cartoonnw.jpg"); }
 
-input#skeeter:checked {
+input#cartoon14:checked {
   background-image: url("../img/skeeter.jpg"); }
 
-input#skeeter:not(:checked) {
+input#cartoon14:not(:checked) {
   background-image: url("../img/cartoonnw.jpg"); }
 
-input#snarf:checked {
+input#cartoon14:checked {
   background-image: url("../img/snarf.jpg"); }
 
-input#snarf:not(:checked) {
+input#cartoon14:not(:checked) {
   background-image: url("../img/cartoonnw.jpg"); }
 
-input#vegeta:checked {
+input#cartoon15:checked {
   background-image: url("../img/vegeta.jpg"); }
 
-input#vegeta:not(:checked) {
+input#cartoon15:not(:checked) {
   background-image: url("../img/cartoonnw.jpg"); }
 
 .modal label {
@@ -411,7 +411,7 @@ input#vegeta:not(:checked) {
   width: 209px;
   border: 2px solid black; }
 
-input#bojack, input#dexter, input#eliza, input#fries, input#goku, input#heart, input#lsp, input#magic, input#meatball, input#otto, input#pinky, input#rick, input#shake, input#skeeter, input#snarf, input#vegeta {
+input#cartoon1, input#cartoon2, input#cartoon3, input#cartoon4, input#cartoon5, input#cartoon6, input#cartoon7, input#cartoon8, input#cartoon9, input#cartoon10, input#cartoon11, input#cartoon12, input#cartoon13, input#cartoon14, input#cartoon14, input#cartoon15 {
   margin-top: 20px;
   width: 100px;
   height: 200px;

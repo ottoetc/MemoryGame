@@ -8,28 +8,22 @@
     <link href='https://fonts.googleapis.com/css?family=Abril+Fatface' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Dawning+of+a+New+Day' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../Content/css/main.css" media="screen" title="no title" charset="utf-8">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <script src="../Content/js/scripts.js"></script>
-    <title>Memory Flip</title>
+    <link rel="stylesheet" href="../Content/css/easy.css" media="screen" title="no title" charset="utf-8">
+    <title>Easy Layout</title>
   </head>
   <body>
-    <div class="container-landing">
-
     <nav>
       <ul>
-        <li class="logo1"><a href="index.html" class="brand-logo">Memory<span>Flip</span> </li>
-        <li><a href="index.html">Home</a></li>
-        <!-- <li class="border1"><a href="#">Rules</a></li> -->
-
+        <li class="logo1"><a href="/" class="brand-logo">Memory<span>Flip</span> <i class="fa fa-stop c1"></i> <i class="fa fa-stop c2"></i> <i class="fa fa-stop c3"></i></li>
+        <li class="homey"><a href="/">Home</a></li>
         <li class="border1">
-          <div class="modal landingModal2">
+          <div class="modal">
             <label for="modal-1">
               <div class="modal-trigger">Rules</div>
             </label>
             <input class="modal-state" id="modal-1" type="checkbox" />
             <div class="modal-fade-screen">
-              <div class="modal-inner" id="landingin">
+              <div class="modal-inner">
                 <div class="modal-close" for="modal-1"></div>
                 <h1>Memory<span>Flip</span> <i class="fa fa-stop c1"></i> <i class="fa fa-stop c2"></i> <i class="fa fa-stop c3"></i></h1><br>
                 <p class="modal-intro">mem·o·ry</p><br>
@@ -40,49 +34,22 @@
             </div>
           </div>
         </li>
-
-
       </ul>
-      </nav>
+    </nav>
 
+    <div class="easy-title">
+      <h1><span class='tint'>Level</span> One: <span class="potter">PotterLand</span></h1>
+      <h2>Click <span class='accent'>on</span> cards to find <span class='accent'>the</span>  matching pairs.</h2>
 
-      <div class="title">
-        <h1>Memory<span>Flip</span> <i class="fa fa-stop c1"></i> <i class="fa fa-stop c2"></i> <i class="fa fa-stop c3"></i></h1>
-        <h2 id="logo-hide"><i class="fa fa-stop c1"></i> <i class="fa fa-stop c2"></i> <i class="fa fa-stop c3"></i></h2>
+    </div>
 
-        <h3>A game <span>of</span> memory.</h3>
-        <h3>Choose <span>a</span> level.</h3>
-      </div>
-
-      <div class="button-container">
-
-        <form action="/game1" method="post">
-          <button type="submit"><span class="button dimond">EASY</span></button>
-        </form>
-        <form action="/game2" method="post">
-          <button type="submit"><span class="button ribbon">INTERMEDIATE</span></button>
-        </form>
-        <form method="post" action="/game3">
-          <button type="submit"><span class="button dimond">HARD</span></button>
-        </form>
-      </div>
-
-
-
-        <div class="boxes">
-              <div class="box box1"></div>
-              <div class="box box2"></div>
-              <div class="box box3"></div>
-              <div class="box box4"></div>
-              <div class="box box5"></div>
-
-        </div>
-      </div>
-
-      <footer>
-
-
-      </footer>
-
+    <div class="cards">
+      @foreach(var card in @Model)
+      {
+      <input type="checkbox" id="@card.GetTheme()@card.GetPairNum()">
+      }
+    </div>
   </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script src="../Content/js/scripts.js"></script>
 </html>

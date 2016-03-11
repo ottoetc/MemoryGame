@@ -14,58 +14,38 @@ namespace MemoryGame
       {
         return View["index.cshtml"];
       };
-      Post["/game"] = _ =>
+      Post["/game1"] = _ =>
       {
-        newGame.SetDifficulty(Request.Form["game-difficulty"]);
-        newGame.SetTheme(Request.Form["game-theme"]);
+        Card.DeleteAll();
+        newGame.SetDifficulty(6);
+        newGame.SetTheme("harrypotter");
         List<Card> gameCards = newGame.CreateGame();
         List<Card> allCards = Card.GetAll();
 
-        Dictionary<string, object> gameBoard = new Dictionary<string, object>();
-        gameBoard.Add("allCards", allCards);
-
-        return View["game.cshtml", gameBoard];
+        return View["game1.cshtml", allCards];
       };
-
-      Get["/firstpick"] = _ =>
+      Post["/game2"] = _ =>
       {
-        Dictionary<string, object> updatedBoard = new Dictionary<string, object>();
-
+        Card.DeleteAll();
+        newGame.SetDifficulty(12);
+        newGame.SetTheme("rapper");
+        List<Card> gameCards = newGame.CreateGame();
         List<Card> allCards = Card.GetAll();
 
-        updatedBoard.Add("allCards", allCards);
-
-        return View["game.cshtml", updatedBoard];
+        return View["game2.cshtml", allCards];
       };
-      Post["/firstpick"] = _ =>
+      Post["/game3"] = _ =>
       {
-        Dictionary<string, object> updatedBoard = new Dictionary<string, object>();
-
-
-        Card clickedCard1 = Card.Find(Request.Form["clicked-card"]);
-
-        clickedCard1.Update("yes");
-
-        newGame.SetFirstCard(clickedCard1);
-
+        Card.DeleteAll();
+        newGame.SetDifficulty(15);
+        newGame.SetTheme("cartoon");
+        List<Card> gameCards = newGame.CreateGame();
         List<Card> allCards = Card.GetAll();
 
-        updatedBoard.Add("allCards", allCards);
-
-        return View["game.cshtml", updatedBoard];
+        return View["game3.cshtml", allCards];
       };
 
-      Get["/secondpick"] = _ =>
-      {
-        Dictionary<string, object> updatedBoard = new Dictionary<string, object>();
 
-        List<Card> allCards = Card.GetAll();
-        Card card1 = newGame.GetFirstCard();
-
-        updatedBoard.Add("allCards", allCards);
-
-        return View["index.cshtml", updatedBoard];
-      };
       Post["/secondpick"] = _ =>
       {
         Dictionary<string, object> updatedBoard = new Dictionary<string, object>();
