@@ -93,6 +93,8 @@
     }
   }
 
+
+
   .modal-inner {
     @include transition(opacity 0.25s ease);
     background: $modal-background;
@@ -120,6 +122,8 @@
       color: $base-font-color;
       text-align: left;
       text-transform: capitalize;
+      width: 60%;
+      margin: auto;
     }
 
     h1 span {
@@ -129,17 +133,22 @@
     p {
       color: $base-font-color;
       line-height: $base-line-height;
+      font-size: 23px;
     }
 
     .modal-intro {
       margin-bottom: 1em;
+      width: 60%;
+      margin: auto;
     }
 
     .modal-content {
       color: $base-font-color;
+      width: 60%;
+      margin: auto;
 
       @include media($medium-screen) {
-        @include columns(2 8em);
+        // @include columns(2 8em);
       }
     }
 

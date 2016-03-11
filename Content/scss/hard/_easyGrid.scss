@@ -1,0 +1,241 @@
+@import 'layout/_mixins';
+@import "base/variables";
+
+@font-face {
+    font-family: 'most-wasted'; /*a name to be used later*/
+    src: url("../most_wasted/Mostwasted.ttf"); /*URL to font*/
+}
+
+.easy-title {
+  width: 100%;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-bottom: 90px;
+    padding-top: 30px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.card {
+    @extend %card-set;
+}
+
+h1 {
+  font-family: 'Lato', sans-serif;
+  color: white;
+  font-size: 40px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.tint {
+    font-family: 'Dawning of a New Day', cursive;
+    font-size: 60px;
+}
+
+.potter {
+  font-family: 'Bangers', cursive;;
+  font-size: 110px;
+  @media #{$brk-med3} {
+    font-size: 85px;
+  }
+}
+
+.accent {
+  font-family: 'Dawning of a New Day', cursive;
+  font-size: 40px;
+}
+
+h2 {
+  font-family: 'Lato', sans-serif;
+  color: white;
+  margin: 0 auto;
+  text-align: center;
+  @media #{$brk-narrow} {
+    font-size: 18px;
+  }
+}
+
+
+@import 'layout/_mixins';
+
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+h1 {
+  text-align: center;
+  font-weight: lighter;
+}
+.card {
+    @extend %card-set;
+}
+
+
+input#bojack {
+    @extend %cartoon-card;
+}
+
+input#bojack:checked {
+    background-image: url("../img/bojack.jpg");
+}
+input#bojack:not(:checked) {
+    background-image: url("../img/cartoonnw.jpg");
+}
+
+input#dexter {
+    @extend %cartoon-card;
+}
+input#dexter:checked {
+    background-image: url("../img/dexter.jpg");
+}
+input#dexter:not(:checked) {
+    background-image: url("../img/cartoonnw.jpg");
+}
+
+input#eliza {
+    @extend %cartoon-card;
+}
+input#eliza:checked {
+    background-image: url("../img/eliza.jpg");
+}
+input#eliza:not(:checked) {
+    background-image: url("../img/cartoonnw.jpg");
+}
+
+input#fries {
+    @extend %cartoon-card;
+}
+input#fries:checked {
+    background-image: url("../img/fries.jpg");
+}
+input#fries:not(:checked) {
+    background-image: url("../img/cartoonnw.jpg");
+}
+
+input#goku {
+    @extend %cartoon-card;
+}
+input#goku:checked {
+    background-image: url("../img/goku.jpg");
+}
+input#goku:not(:checked) {
+    background-image: url("../img/cartoonnw.jpg");
+}
+
+input#heart {
+    @extend %cartoon-card;
+}
+input#heart:checked {
+    background-image: url("../img/heart.jpg");
+}
+input#heart:not(:checked) {
+    background-image: url("../img/cartoonnw.jpg");
+}
+
+input#lsp {
+    @extend %cartoon-card;
+}
+input#lsp:checked {
+    background-image: url("../img/lsp.jpg");
+}
+input#lsp:not(:checked) {
+    background-image: url("../img/cartoonnw.jpg");
+}
+
+input#magic {
+    @extend %cartoon-card;
+}
+input#magic:checked {
+    background-image: url("../img/magic.jpg");
+}
+input#magic:not(:checked) {
+    background-image: url("../img/cartoonnw.jpg");
+}
+
+input#meatball {
+    @extend %cartoon-card;
+}
+input#meatball:checked {
+    background-image: url("../img/meatball.jpg");
+}
+input#meatball:not(:checked) {
+    background-image: url("../img/cartoonnw.jpg");
+}
+
+input#otto {
+    @extend %cartoon-card;
+}
+input#otto:checked {
+    background-image: url("../img/otto.jpg");
+}
+input#otto:not(:checked) {
+    background-image: url("../img/cartoonnw.jpg");
+}
+
+input#pinky {
+    @extend %cartoon-card;
+}
+input#pinky:checked {
+    background-image: url("../img/pinky.jpg");
+}
+input#pinky:not(:checked) {
+    background-image: url("../img/cartoonnw.jpg");
+}
+
+input#rick {
+    @extend %cartoon-card;
+}
+input#rick:checked {
+    background-image: url("../img/rick.jpg");
+}
+input#rick:not(:checked) {
+    background-image: url("../img/cartoonnw.jpg");
+}
+
+input#shake {
+    @extend %cartoon-card;
+}
+input#shake:checked {
+    background-image: url("../img/shake.jpg");
+}
+input#shake:not(:checked) {
+    background-image: url("../img/cartoonnw.jpg");
+}
+
+input#skeeter {
+    @extend %cartoon-card;
+}
+input#skeeter:checked {
+    background-image: url("../img/skeeter.jpg");
+}
+input#skeeter:not(:checked) {
+    background-image: url("../img/cartoonnw.jpg");
+}
+
+input#snarf {
+    @extend %cartoon-card;
+}
+input#snarf:checked {
+    background-image: url("../img/snarf.jpg");
+}
+input#snarf:not(:checked) {
+    background-image: url("../img/cartoonnw.jpg");
+}
+
+input#vegeta {
+    @extend %cartoon-card;
+}
+input#vegeta:checked {
+    background-image: url("../img/vegeta.jpg");
+}
+input#vegeta:not(:checked) {
+    background-image: url("../img/cartoonnw.jpg");
+}

@@ -1,0 +1,392 @@
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
+.c1 {
+  animation-name: color1;
+  animation-duration: 2s;
+  animation-iteration-count: infinite; }
+
+.c2 {
+  animation-name: color2;
+  animation-duration: 2s;
+  animation-iteration-count: infinite; }
+
+.c3 {
+  animation-name: color3;
+  animation-duration: 2s;
+  animation-iteration-count: infinite; }
+
+@keyframes color1 {
+  20% {
+    color: pink; }
+  50% {
+    color: white; }
+  100% {
+    color: white; } }
+@keyframes color2 {
+  0% {
+    color: white; }
+  50% {
+    color: pink; }
+  100% {
+    color: white; } }
+@keyframes color3 {
+  0% {
+    color: white; }
+  50% {
+    color: white; }
+  100% {
+    color: pink; } }
+a {
+  list-style: none;
+  text-decoration: none;
+  color: white; }
+
+ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+  margin: 0 auto;
+  padding: 20px 0 0; }
+
+nav {
+  width: 80%;
+  margin: auto; }
+
+li {
+  flex: 1;
+  padding: 5px 0;
+  font-size: 18px;
+  text-align: center;
+  list-style: none;
+  text-decoration: none; }
+
+a span {
+  font-family: 'Dawning of a New Day', cursive; }
+
+li:nth-child(1) {
+  display: flex;
+  flex: 6; }
+
+nav ul li a,
+nav ul li a:after,
+nav ul li a:before {
+  transition: all .5s; }
+
+nav ul li a:hover {
+  color: #555; }
+
+/* SHIFT */
+nav ul li a {
+  position: relative;
+  z-index: 1; }
+
+nav ul li a:hover {
+  color: lightpink;
+  opacity: .5; }
+
+.modal-trigger:hover {
+  color: lightpink;
+  opacity: .5; }
+
+.logo1 {
+  font-size: 35px;
+  font-family: 'Lato', sans-serif;
+  font-weight: bold; }
+
+.border1 {
+  border-left: 1px solid white; }
+  @media (max-width: 596px) {
+    .border1 {
+      display: none; } }
+
+@media (max-width: 596px) {
+  .homey {
+    display: none; } }
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-image: url(../img/background-rap.jpg); }
+
+@font-face {
+  font-family: 'most-wasted';
+  /*a name to be used later*/
+  src: url("../most_wasted/Mostwasted.ttf");
+  /*URL to font*/ }
+.card {
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 300px;
+  width: 209px;
+  border: 2px solid black; }
+
+input#asap, input#chainz, input#drake, input#eminem, input#fetty, input#kanye, input#kendrick, input#nicki, input#ocean, input#q, input#tyler, input#wayne {
+  margin-top: 20px;
+  width: 150px;
+  height: 250px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  -webkit-appearance: none;
+  outline: 0;
+  padding: 0; }
+
+.easy-title {
+  width: 100%; }
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-bottom: 90px;
+  padding-top: 30px;
+  max-width: 1300px;
+  margin: auto; }
+
+h1 {
+  font-family: 'Lato', sans-serif;
+  color: white;
+  font-size: 40px;
+  margin: 0 auto;
+  text-align: center; }
+
+.tint {
+  font-family: 'Dawning of a New Day', cursive;
+  font-size: 60px; }
+
+.potter {
+  font-family: 'most-wasted';
+  font-size: 110px; }
+  @media (max-width: 730px) {
+    .potter {
+      font-size: 85px; } }
+
+.accent {
+  font-family: 'Dawning of a New Day', cursive;
+  font-size: 40px; }
+
+h2 {
+  font-family: 'Lato', sans-serif;
+  color: white;
+  margin: 0 auto;
+  text-align: center; }
+  @media (max-width: 695px) {
+    h2 {
+      font-size: 18px; } }
+
+input#asap:checked {
+  background-image: url("../img/asap.jpg"); }
+
+input#asap:not(:checked) {
+  background-image: url("../img/logo.jpg"); }
+
+input#chainz:checked {
+  background-image: url("../img/chainz.jpg"); }
+
+input#chainz:not(:checked) {
+  background-image: url("../img/logo.jpg"); }
+
+input#drake:checked {
+  background-image: url("../img/drake.png"); }
+
+input#drake:not(:checked) {
+  background-image: url("../img/logo.jpg"); }
+
+input#eminem:checked {
+  background-image: url("../img/eminem.jpg"); }
+
+input#eminem:not(:checked) {
+  background-image: url("../img/logo.jpg"); }
+
+input#fetty:checked {
+  background-image: url("../img/fetty.jpg"); }
+
+input#fetty:not(:checked) {
+  background-image: url("../img/logo.jpg"); }
+
+input#kanye:checked {
+  background-image: url("../img/kanye.jpg"); }
+
+input#kanye:not(:checked) {
+  background-image: url("../img/logo.jpg"); }
+
+input#kendrick:checked {
+  background-image: url("../img/kendrick.jpg"); }
+
+input#kendrick:not(:checked) {
+  background-image: url("../img/logo.jpg"); }
+
+input#nicki:checked {
+  background-image: url("../img/nicki.jpg"); }
+
+input#nicki:not(:checked) {
+  background-image: url("../img/logo.jpg"); }
+
+input#ocean:checked {
+  background-image: url("../img/ocean.jpg"); }
+
+input#ocean:not(:checked) {
+  background-image: url("../img/logo.jpg"); }
+
+input#q:checked {
+  background-image: url("../img/q.jpg"); }
+
+input#q:not(:checked) {
+  background-image: url("../img/logo.jpg"); }
+
+input#tyler:checked {
+  background-image: url("../img/tyler.jpg"); }
+
+input#tyler:not(:checked) {
+  background-image: url("../img/logo.jpg"); }
+
+input#wayne:checked {
+  background-image: url("../img/wayne.jpg"); }
+
+input#wayne:not(:checked) {
+  background-image: url("../img/logo.jpg"); }
+
+.modal label {
+  cursor: pointer;
+  margin-bottom: 0; }
+.modal .landingModal2 h1 {
+  margin: 0; }
+.modal .landingModal2 h1 span {
+  font-size: 40px; }
+.modal label img {
+  border-radius: 150px;
+  display: block;
+  max-width: 300px; }
+.modal .modal-state {
+  display: none; }
+.modal .modal-trigger {
+  padding: 0.8em 1em;
+  color: white; }
+.modal .modal-fade-screen {
+  -webkit-transition: opacity 0.25s ease;
+  -moz-transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  opacity: 0;
+  padding-top: 0.6em;
+  text-align: left;
+  visibility: hidden;
+  z-index: 99999999999; }
+  @media screen and (min-width: 53.75em) {
+    .modal .modal-fade-screen {
+      padding-top: 10em; } }
+  .modal .modal-fade-screen .modal-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    cursor: pointer; }
+.modal .modal-close {
+  position: absolute;
+  top: 1.5em;
+  right: 1.5em;
+  height: 1.5em;
+  width: 1.5em;
+  background: #fff;
+  background-color: black;
+  cursor: pointer; }
+  .modal .modal-close:after, .modal .modal-close:before {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    bottom: 0;
+    left: 50%;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    height: 1.5em;
+    width: 0.15em;
+    background: #ddd;
+    content: '';
+    display: block;
+    margin: -3px 0 0 -1px; }
+  .modal .modal-close:hover:after, .modal .modal-close:hover:before {
+    background: #c4c4c4; }
+  .modal .modal-close:before {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg); }
+.modal .modal-inner {
+  -webkit-transition: opacity 0.25s ease;
+  -moz-transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease;
+  background: #fff;
+  border-radius: 3px;
+  background-color: black;
+  margin-top: 0;
+  margin: auto;
+  max-height: 95%;
+  overflow: auto;
+  padding: 1.5em;
+  position: relative;
+  width: 95%; }
+  @media screen and (min-width: 40em) {
+    .modal .modal-inner {
+      max-height: 70%;
+      padding: 3em;
+      width: 60%; } }
+  @media screen and (min-width: 53.75em) {
+    .modal .modal-inner {
+      width: 50%; } }
+  .modal .modal-inner h1 {
+    color: white;
+    text-align: left;
+    text-transform: capitalize;
+    width: 60%;
+    margin: auto; }
+  .modal .modal-inner h1 span {
+    font-family: 'Dawning of a New Day', cursive; }
+  .modal .modal-inner p {
+    color: white;
+    line-height: 1.5em;
+    font-size: 23px; }
+  .modal .modal-inner .modal-intro {
+    margin-bottom: 1em;
+    width: 60%;
+    margin: auto; }
+  .modal .modal-inner .modal-content {
+    color: white;
+    width: 60%;
+    margin: auto; }
+  .modal .modal-inner a.cta {
+    color: #fff;
+    display: inline-block;
+    margin-right: 0.5em;
+    margin-top: 1em; }
+    .modal .modal-inner a.cta:last-child {
+      padding: 0 2em; }
+.modal .modal-state:checked + .modal-fade-screen {
+  opacity: 1;
+  visibility: visible; }
+.modal .modal-state:checked + .modal-fade-screen .modal-inner {
+  top: 0.5em; }
+
+.modal-open {
+  overflow: hidden; }
+
+.card {
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 300px;
+  width: 209px;
+  border: 2px solid black; }
+
+/*# sourceMappingURL=med.css.map */

@@ -1,0 +1,204 @@
+@import 'layout/_mixins';
+@import "base/variables";
+
+@font-face {
+    font-family: 'most-wasted'; /*a name to be used later*/
+    src: url("../most_wasted/Mostwasted.ttf"); /*URL to font*/
+}
+
+%card-set {
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 300px;
+  width: 209px;
+  border: 2px solid black;
+}
+
+%rap-card {
+  margin-top: 20px;
+  width: 150px;
+  height: 250px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  -webkit-appearance: none;
+  outline: 0;
+  padding: 0;
+}
+
+
+.easy-title {
+  width: 100%;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-bottom: 90px;
+    padding-top: 30px;
+    max-width: 1300px;
+    margin: auto;
+}
+
+.card {
+    @extend %card-set;
+}
+
+h1 {
+  font-family: 'Lato', sans-serif;
+  color: white;
+  font-size: 40px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.tint {
+    font-family: 'Dawning of a New Day', cursive;
+    font-size: 60px;
+}
+
+.potter {
+  font-family: 'most-wasted';
+  font-size: 110px;
+  @media #{$brk-med3} {
+    font-size: 85px;
+  }
+}
+
+.accent {
+  font-family: 'Dawning of a New Day', cursive;
+  font-size: 40px;
+}
+
+h2 {
+  font-family: 'Lato', sans-serif;
+  color: white;
+  margin: 0 auto;
+  text-align: center;
+  @media #{$brk-narrow} {
+    font-size: 18px;
+  }
+}
+
+
+input#asap {
+    @extend %rap-card;
+}
+
+input#asap:checked {
+    background-image: url("../img/asap.jpg");
+}
+input#asap:not(:checked) {
+    background-image: url("../img/logo.jpg");
+}
+
+input#chainz {
+    @extend %rap-card;
+}
+input#chainz:checked {
+    background-image: url("../img/chainz.jpg");
+}
+input#chainz:not(:checked) {
+    background-image: url("../img/logo.jpg");
+}
+
+input#drake {
+    @extend %rap-card;
+}
+input#drake:checked {
+    background-image: url("../img/drake.png");
+}
+input#drake:not(:checked) {
+    background-image: url("../img/logo.jpg");
+}
+
+input#eminem {
+    @extend %rap-card;
+}
+input#eminem:checked {
+    background-image: url("../img/eminem.jpg");
+}
+input#eminem:not(:checked) {
+    background-image: url("../img/logo.jpg");
+}
+
+input#fetty {
+    @extend %rap-card;
+}
+input#fetty:checked {
+    background-image: url("../img/fetty.jpg");
+}
+input#fetty:not(:checked) {
+    background-image: url("../img/logo.jpg");
+}
+
+input#kanye {
+    @extend %rap-card;
+}
+input#kanye:checked {
+    background-image: url("../img/kanye.jpg");
+}
+input#kanye:not(:checked) {
+    background-image: url("../img/logo.jpg");
+}
+
+input#kendrick {
+    @extend %rap-card;
+}
+input#kendrick:checked {
+    background-image: url("../img/kendrick.jpg");
+}
+input#kendrick:not(:checked) {
+    background-image: url("../img/logo.jpg");
+}
+
+input#nicki {
+    @extend %rap-card;
+}
+input#nicki:checked {
+    background-image: url("../img/nicki.jpg");
+}
+input#nicki:not(:checked) {
+    background-image: url("../img/logo.jpg");
+}
+
+input#ocean {
+    @extend %rap-card;
+}
+input#ocean:checked {
+    background-image: url("../img/ocean.jpg");
+}
+input#ocean:not(:checked) {
+    background-image: url("../img/logo.jpg");
+}
+
+input#q {
+    @extend %rap-card;
+}
+input#q:checked {
+    background-image: url("../img/q.jpg");
+}
+input#q:not(:checked) {
+    background-image: url("../img/logo.jpg");
+}
+
+input#tyler {
+    @extend %rap-card;
+}
+input#tyler:checked {
+    background-image: url("../img/tyler.jpg");
+}
+input#tyler:not(:checked) {
+    background-image: url("../img/logo.jpg");
+}
+
+input#wayne {
+    @extend %rap-card;
+}
+input#wayne:checked {
+    background-image: url("../img/wayne.jpg");
+}
+input#wayne:not(:checked) {
+    background-image: url("../img/logo.jpg");
+}

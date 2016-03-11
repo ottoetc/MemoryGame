@@ -88,6 +88,10 @@ nav ul li a:hover {
   color: lightpink;
   opacity: .5; }
 
+.modal-trigger:hover {
+  color: lightpink;
+  opacity: .5; }
+
 .logo1 {
   font-size: 35px;
   font-family: 'Lato', sans-serif;
@@ -95,6 +99,13 @@ nav ul li a:hover {
 
 .border1 {
   border-left: 1px solid white; }
+  @media (max-width: 596px) {
+    .border1 {
+      display: none; } }
+
+@media (max-width: 596px) {
+  .homey {
+    display: none; } }
 
 body {
   font-family: 'Lato', sans-serif;
@@ -350,21 +361,23 @@ input#luna:not(:checked) {
   .modal .modal-inner h1 {
     color: white;
     text-align: left;
-    text-transform: capitalize; }
+    text-transform: capitalize;
+    width: 60%;
+    margin: auto; }
   .modal .modal-inner h1 span {
     font-family: 'Dawning of a New Day', cursive; }
   .modal .modal-inner p {
     color: white;
-    line-height: 1.5em; }
+    line-height: 1.5em;
+    font-size: 23px; }
   .modal .modal-inner .modal-intro {
-    margin-bottom: 1em; }
+    margin-bottom: 1em;
+    width: 60%;
+    margin: auto; }
   .modal .modal-inner .modal-content {
-    color: white; }
-    @media screen and (min-width: 40em) {
-      .modal .modal-inner .modal-content {
-        -webkit-columns: 2 8em;
-        -moz-columns: 2 8em;
-        columns: 2 8em; } }
+    color: white;
+    width: 60%;
+    margin: auto; }
   .modal .modal-inner a.cta {
     color: #fff;
     display: inline-block;
