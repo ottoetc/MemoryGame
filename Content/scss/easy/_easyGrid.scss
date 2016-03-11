@@ -1,17 +1,63 @@
 @import 'layout/_mixins';
+@import "base/variables";
 
+@font-face {
+    font-family: 'parry-hotter'; /*a name to be used later*/
+    src: url("../parry-hotter/ParryHotter.ttf"); /*URL to font*/
+}
+
+.easy-title {
+  width: 100%;
+}
 
 .cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding-bottom: 70px;
-    padding-top: 60px;
-
+    padding-bottom: 90px;
+    padding-top: 30px;
+    max-width: 1000px;
+    margin: auto;
 }
 
 .card {
     @extend %card-set;
+}
+
+h1 {
+  font-family: 'Lato', sans-serif;
+  color: white;
+  font-size: 40px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.tint {
+    font-family: 'Dawning of a New Day', cursive;
+    font-size: 60px;
+}
+
+.potter {
+  font-family: 'parry-hotter';
+  font-size: 110px;
+  @media #{$brk-med3} {
+    font-size: 85px;
+  }
+}
+
+.accent {
+  font-family: 'Dawning of a New Day', cursive;
+  font-size: 40px;
+}
+
+h2 {
+  font-family: 'Lato', sans-serif;
+  color: white;
+  margin: 0 auto;
+  text-align: center;
+  @media #{$brk-narrow} {
+    font-size: 18px;
+  }
 }
 
 

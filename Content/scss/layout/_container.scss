@@ -1,8 +1,9 @@
+@import "base/variables";
+
 body {
   font-family: 'Lato', sans-serif;
   // background-image: url(http://p1.pichost.me/i/11/1344899.jpg);
   background-image: url(../img/background.jpg);
-
 }
 
 .title h1 {
@@ -12,6 +13,12 @@ body {
   color: white;
   text-align: center;
   margin-bottom: 0;
+  @media #{$brk-med2} {
+    font-size: 50px;
+  }
+  @media #{$brk-narrow2} {
+    display: none;
+  }
 }
 .title h3 {
   font-family: 'Lato', sans-serif;
@@ -19,17 +26,40 @@ body {
   font-size: 25px;
   color: white;
   text-align: center;
+  @media #{$brk-narrow2} {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 }
 
 h1 span {
   font-family: 'Dawning of a New Day', cursive;
   font-size: 100px;
+  @media #{$brk-med2} {
+    font-size: 70px;
+  }
 }
 
 .title {
   width: 1000px;
   padding-top: 20px;
   margin: 0 auto;
+  @media #{$brk-med2} {
+    width: 100%;
+    margin: auto;
+  }
+}
+
+#logo-hide {
+  display: none;
+  @media #{$brk-narrow2} {
+    display: block;
+    color: white;
+    font-size: 70px;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 }
 
 h3 span {
